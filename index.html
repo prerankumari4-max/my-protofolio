@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prerna | Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      width:100%;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#0f172a,#1e293b,#7c3aed);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero{
+      text-align:center;
+      z-index:2;
+      animation:fadeIn 1.5s ease;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:10px;
+      background:linear-gradient(to right,#fff,#c084fc);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      color:#d1d5db;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      padding:12px 25px;
+      border:none;
+      background:#7c3aed;
+      color:white;
+      font-size:1rem;
+      border-radius:30px;
+      cursor:pointer;
+      transition:0.3s;
+      text-decoration:none;
+    }
+
+    .btn:hover{
+      background:#9333ea;
+      transform:scale(1.05);
+    }
+
+    .circle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      animation:float 8s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1){
+      width:250px;
+      height:250px;
+      top:10%;
+      left:10%;
+    }
+
+    .circle:nth-child(2){
+      width:150px;
+      height:150px;
+      bottom:10%;
+      right:15%;
+      animation-delay:2s;
+    }
+
+    .circle:nth-child(3){
+      width:100px;
+      height:100px;
+      top:50%;
+      right:30%;
+      animation-delay:4s;
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .title{
+      font-size:2.5rem;
+      margin-bottom:40px;
+      text-align:center;
+      color:#c084fc;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+      box-shadow:0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      justify-content:center;
+    }
+
+    .skill{
+      background:#7c3aed;
+      padding:12px 20px;
+      border-radius:30px;
+      transition:0.3s;
+    }
+
+    .skill:hover{
+      transform:scale(1.1);
+      background:#9333ea;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .project-content{
+      padding:25px;
+    }
+
+    .project-content h3{
+      margin-bottom:10px;
+      color:#c084fc;
+    }
+
+    .project-content p{
+      color:#d1d5db;
+      margin-bottom:20px;
+    }
+
+    .project-content a{
+      color:white;
+      text-decoration:none;
+      background:#7c3aed;
+      padding:10px 18px;
+      border-radius:25px;
+      display:inline-block;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:10px 0;
+      color:#d1d5db;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      color:#9ca3af;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-30px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <div class="hero">
+      <h1>Prerna </h1>
+      <p>BCA Student • Web Developer • UI Designer</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="title">About Me</h2>
+
+    <div class="about">
+      <div class="card">
+        <h3>Who Am I?</h3>
+        <br>
+        <p>
+          Motivated BCA student with a strong interest in web development
+          and UI design. Skilled in building responsive and user-friendly
+          websites using HTML, CSS, and JavaScript.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Education</h3>
+        <br>
+        <p><strong>BCA</strong> – Shoolini University (2025–2028)</p>
+        <br>
+        <p><strong>Class 12</strong> – Government School, Delhi</p>
+        <br>
+        <p><strong>Class 10</strong> – Lingayas Public School</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="title">Skills</h2>
+
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">C</div>
+      <div class="skill">C++</div>
+      <div class="skill">Adobe Photoshop</div>
+      <div class="skill">MS Excel</div>
+      <div class="skill">Tally Prime</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="title">Projects</h2>
+
+    <div class="projects">
+
+      <div class="project-card">
+        <div class="project-content">
+          <h3>E-Commerce Website</h3>
+          <p>Responsive e-commerce website built using HTML, CSS & JavaScript.</p>
+          <a href="https://prerankumari4-max.github.io/codsoft-ecommerce-website/" target="_blank">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Restaurant Website</h3>
+          <p>Modern responsive restaurant website with menu and navigation.</p>
+          <a href="https://prerankumari4-max.github.io/codsoft-restrauntmenu/" target="_blank">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Email Template</h3>
+          <p>Responsive email template with clean layout and compatibility.</p>
+          <a href="https://prerankumari4-max.github.io/codsoft-emailtemplate/" target="_blank">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Authentication UI</h3>
+          <p>User-friendly sign-in interface with form validation.</p>
+          <a href="https://prerankumari4-max.github.io/codsoft-auth-ui/" target="_blank">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Coffee Heaven</h3>
+          <p>Modern coffee-themed website showcasing menu and brand story.</p>
+          <a href="https://prerankumari4-max.github.io/COFFEE-HEAVEN/" target="_blank">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="title">Contact</h2>
+
+    <div class="contact">
+      <p>📧 prerankumari04@gmail.com</p>
+      <p>📱 8860762489</p>
+      <p>📍 Delhi, India</p>
+
+      <br>
+
+      <a class="btn" href="https://github.com/prerankumari4-max" target="_blank">
+        GitHub
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Prerna  | Portfolio Website</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll(".card, .project-card");
+
+    window.addEventListener("scroll", () => {
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        if(cardTop < window.innerHeight - 100){
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    cards.forEach(card => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(50px)";
+      card.style.transition = "0.6s ease";
+    });
+  </script>
+
+</body>
+</html>
